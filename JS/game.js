@@ -23,6 +23,7 @@ let teamLineup = [];
 let enemyLineup = [];
 let whoseTurn = null;
 let winner = null;
+let battleEvent = false;
 
 // Create Starting selection Menu
 const selectionMenu = () => {
@@ -88,7 +89,7 @@ const selectChar = () => {
 };
 
 const startMatch = () => {
-  startButton.addEventListener("click", () => {
+  const beginMatch = () => {
     // If not 3 characters, cannot start game
     if (teamLineup.length < 3) {
       warningScreen.innerText = "Please choose 3 characters";
@@ -102,7 +103,8 @@ const startMatch = () => {
 
     warningScreen.innerText = "Game Start!";
     warningScreen.style.display = "flex";
-    startButton.removeEventListener("click", startMatch);
+
+    startButton.removeEventListener("click", beginMatch);
 
     // Load game screen FUNCTION
     setTimeout(() => {
@@ -110,8 +112,11 @@ const startMatch = () => {
       warningScreen.style.display = "none";
       init();
       charSelect.style.display = "none";
+      startButton.addEventListener("click", beginMatch);
     }, 2000);
-  });
+  };
+
+  startButton.addEventListener("click", beginMatch);
 };
 
 // INITIATE THE MATCH
@@ -261,6 +266,7 @@ const playerTurn = () => {
         Object.values(selectedActiveChar.attacks).forEach((attack) => {
           const attackOption = document.createElement("img");
           attackOption.classList.add("attack-image");
+          attackOption.alt = "attack";
           attackOption.src = attack.img;
           attackOption.alt = attack.name;
           attackOption.description = attack.description;
@@ -286,8 +292,6 @@ const playerTurn = () => {
                 selectEnemies(selectedCharacter, selectedAttack);
               } else if (attack.effect === "block") {
                 selectSelf(selectedCharacter, selectedAttack);
-              } else if (attack.effect === "healself") {
-                selectOwnself(selectedCharacter, selectedAttack);
               }
             }
           });
@@ -433,6 +437,7 @@ const playerTurn = () => {
               enemyTeam.removeEventListener("click", attackTarget);
 
               infoScreen.innerText = `Enemy ${targetEnemy.name} received ${attack.damage} damage`;
+
               updateHealthBar();
             }
           }

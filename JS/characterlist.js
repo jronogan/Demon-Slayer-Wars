@@ -145,7 +145,7 @@ class CharacterList {
 
   static GetRandomCharacter() {
     const id = Object.keys(this.characters); //Object.keys() returns an array with the keys of the character constructor
-    const randomId = id[Math.ceil(Math.random() * id.length)];
+    const randomId = id[Math.floor(Math.random() * id.length)];
     return this.GetCharacter(randomId);
   }
 }
