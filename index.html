@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demon Slayer Wars</title>
+    <!-- CSS -->
+    <link href="style/game.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="character-selection character-selection-menu hidden">
+      <h2 class="selection-time">Select your Characters!</h2>
+      <div class="character-buttons"></div>
+      <button class="start-game" type="button">Find Opponent</button>
+      <h2 class="selected-header">Selected Team</h2>
+      <div class="selected-team"></div>
+      <p class="warning"></p>
+    </div>
+
+    <div class="game-container battle-screen">
+      <h2 class="enemy-words"></h2>
+      <div class="enemy-team"></div>
+      <div class="enemy-healthbar"></div>
+      <div class="enemy-healthpoints"></div>
+      <div class="player-healthbar"></div>
+      <div class="player-healthpoints"></div>
+      <h2 class="player-words"></h2>
+      <div class="player-team"></div>
+      <h2 class="attack-words"></h2>
+      <div class="attack-screen"></div>
+      <!-- <button class="surrender" type="button"></button> -->
+      <div class="info-screen"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="JS/characterlist.js"></script>
+    <script src="JS/game.js"></script>
+  </body>
+</html>
+
+<img src = "images/dead.png"

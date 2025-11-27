@@ -1,0 +1,316 @@
+/* Selection Screen Character Menu */
+.character-selection {
+  width: 1080px;
+  height: 566px;
+  border: 3px solid black;
+  background-image: url("/images/Game Background/Game Fight Background.jpg");
+  background-position: center;
+  background-repeat: no repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 1fr 3fr 0.5fr 1fr 2fr;
+  place-content: center;
+}
+
+.selection-time {
+  place-self: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 330px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-team {
+  place-self: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 330px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.selected-header {
+  place-self: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 160px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-game {
+  width: 150px;
+  height: 25px;
+  place-self: center;
+  border: 2px solid black;
+}
+
+.warning {
+  position: absolute;
+  top: 240px;
+  left: 450px;
+  width: 200px;
+  height: 40px;
+  background-color: white;
+  display: none;
+  place-content: center;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+.character-buttons {
+  place-self: center;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 10px;
+}
+
+.character {
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character img {
+  width: 100px;
+  height: auto;
+  border-radius: 10%;
+}
+
+.img {
+  border: none;
+}
+
+.img.selected {
+  border: 5px solid gold;
+  border-radius: 10%;
+}
+
+/* Game Screen */
+
+.game-container {
+  width: 1080px;
+  height: 566px;
+  border: 3px solid black;
+  background-image: url("/images/Game Background/Game Fight Background.jpg");
+  background-position: center;
+  background-repeat: no repeat;
+  background-size: cover;
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr 0.2fr 0.5fr 0.2fr 1fr 0.5fr 1fr;
+}
+
+.attack-screen {
+  grid-column: 2/5;
+  grid-row: 7/8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.enemy-words {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-words {
+  grid-column: 1/2;
+  grid-row: 5/7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attack-words {
+  grid-column: 1/2;
+  grid-row: 7/8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.surrender {
+  grid-column: 1/2;
+  grid-row: 8/9;
+  background-color: rgb(182, 182, 182);
+  height: 40px;
+  width: 215px;
+  place-self: center;
+}
+
+.info-screen {
+  grid-column: 2/5;
+  grid-row: 8/9;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 800px;
+  place-self: center;
+}
+
+.selected-team img {
+  width: 100px;
+  height: 100px;
+}
+
+.enemy-team {
+  grid-column: 2/5;
+  grid-row: 2/3;
+  display: contents;
+}
+
+.enemy-team img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.enemy-health-bar {
+  width: 100px;
+  height: 10px;
+  background-color: lightgreen;
+}
+
+.enemy-healthbar {
+  grid-column: 2/5;
+  grid-row: 3/4;
+  display: contents;
+}
+
+.enemy-healthpoints {
+  grid-column: 2/5;
+  grid-row: 3/4;
+  z-index: 1;
+  display: contents;
+}
+
+.player-team {
+  grid-column: 2/5;
+  grid-row: 6/7;
+  display: contents;
+}
+
+.player-team img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.player-health-bar {
+  width: 100px;
+  height: 10px;
+  background-color: lightgreen;
+}
+
+.player-healthbar {
+  grid-column: 2/5;
+  grid-row: 5/6;
+  display: contents;
+}
+
+.player-healthpoints {
+  grid-column: 2/5;
+  grid-row: 5/6;
+  z-index: 1;
+  display: contents;
+}
+
+.attack-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 10%;
+}
+
+#player-0 {
+  grid-row: 5/6;
+  grid-column: 2/3;
+  place-self: center;
+}
+
+#player-1 {
+  grid-row: 5/6;
+  grid-column: 3/4;
+  place-self: center;
+}
+
+#player-2 {
+  grid-row: 5/6;
+  grid-column: 4/5;
+  place-self: center;
+}
+
+#playerimage-0 {
+  grid-row: 6/7;
+  grid-column: 2/3;
+  place-self: center;
+}
+
+#playerimage-1 {
+  grid-row: 6/7;
+  grid-column: 3/4;
+  place-self: center;
+}
+
+#playerimage-2 {
+  grid-row: 6/7;
+  grid-column: 4/5;
+  place-self: center;
+}
+
+#enemy-0 {
+  grid-row: 3/4;
+  grid-column: 2/3;
+  place-self: center;
+}
+
+#enemy-1 {
+  grid-row: 3/4;
+  grid-column: 3/4;
+  place-self: center;
+}
+
+#enemy-2 {
+  grid-row: 3/4;
+  grid-column: 4/5;
+  place-self: center;
+}
+
+#enemyimage-0 {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  place-self: center;
+}
+
+#enemyimage-1 {
+  grid-row: 2/3;
+  grid-column: 3/4;
+  place-self: center;
+}
+
+#enemyimage-2 {
+  grid-row: 2/3;
+  grid-column: 4/5;
+  place-self: center;
+}
+
+.highlight {
+  box-shadow: inset 0 0 0 9999px rgba(246, 255, 0, 0.5);
+}
